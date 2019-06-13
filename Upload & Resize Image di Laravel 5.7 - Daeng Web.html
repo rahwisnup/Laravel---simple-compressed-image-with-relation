@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://daengweb.id/upload-resize-image-di-laravel-57 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Upload &amp; Resize Image di Laravel 5.7 - Daeng Web</title>
+<meta name="description" content="Resizing image menjadi penting agar supaya ketika ditampilkan pada halaman web, dimensi yang di-develiery adalah dimensi originalnya tanpa perlu lagi diatur ukurannya menggunakan property width dan height pada HTML / CSS. Berikut adalah cara memanipulasi image di Laravel">
+<meta name="keywords" content="Upload &amp; Resize Image di Laravel 5.7, cara upload gambar di laravel 5.7, resize gambar di laravel, laravel upload image, mengubah dimensi gambar laravel, laravel indonesia, laravel, daengweb">
+<meta name="revisit-after" content="1 days">
+<meta name="robots" content="all,index,follow">
+<meta name="MSSmartTagsPreventParsing" content="TRUE">
+<meta http-equiv="Content-Language" content="id">
+
+<meta name="Distribution" content="Global">
+<meta name="Rating" content="General">
+<link rel="shortcut icon" href="https://daengweb.id/front/d-blog/img/favicon.png">
+<meta property="og:site_name" content="Upload &amp; Resize Image di Laravel 5.7 - Daeng Web">
+<link rel="canonical" href="https://daengweb.id/upload-resize-image-di-laravel-57">
+<meta property="og:locale" content="id">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Upload &amp; Resize Image di Laravel 5.7 - Daeng Web">
+<meta property="og:description" content="Resizing image menjadi penting agar supaya ketika ditampilkan pada halaman web, dimensi yang di-develiery adalah dimensi originalnya tanpa perlu lagi diatur ukurannya menggunakan property width dan height pada HTML / CSS. Berikut adalah cara memanipulasi image di Laravel">
+<meta property="og:url" content="https://daengweb.id/upload-resize-image-di-laravel-57">
+<meta property="og:image" content="https://daengweb.id/uploads/galeri/1/Upload___Resize_Image_di_Laravel_5_7.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Resizing image menjadi penting agar supaya ketika ditampilkan pada halaman web, dimensi yang di-develiery adalah dimensi originalnya tanpa perlu lagi diatur ukurannya menggunakan property width dan height pada HTML / CSS. Berikut adalah cara memanipulasi image di Laravel">
+<meta name="twitter:title" content="Upload &amp; Resize Image di Laravel 5.7 - Daeng Web">
+<meta name="twitter:image" content="https://daengweb.id/uploads/galeri/1/Upload___Resize_Image_di_Laravel_5_7.png"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" type="image/png" href="https://daengweb.id/front/elcms-theme/img/icon/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="https://daengweb.id/front/elcms-theme/img/icon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://daengweb.id/front/elcms-theme/img/icon/favicon-96x96.png" sizes="96x96">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://daengweb.id/front/elcms-theme/img/icon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://daengweb.id/front/elcms-theme/img/icon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://daengweb.id/front/elcms-theme/img/icon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://daengweb.id/front/elcms-theme/img/icon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://daengweb.id/front/elcms-theme/img/icon/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://daengweb.id/front/elcms-theme/img/icon/apple-touch-icon-152x152.png">
+<link rel="icon" href="https://daengweb.id/front/elcms-theme/img/icon/favicon.ico">
+
+<link rel="stylesheet" href="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/shards.min.css">
+<link rel="stylesheet" href="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/shards-extras.min.css">
+<link rel="stylesheet" href="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/dw-style.css">
+<link rel="stylesheet" href="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/monokai-sublime.min.css">
+<style>
+        .h1, h1 {
+            font-size: 2.441rem;
+            letter-spacing: -.0625rem;
+            line-height: 2.25rem;
+        }
+    </style>
+<meta property="fb:app_id" content="376037509401398">
+
+<script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/inferredEvents.js.download" async=""></script><script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/sdk.js(2).download" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/sdk.js(3).download"></script><script async="" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/analytics.js.download"></script><script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/376183892506022" async=""></script><script async="" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/fbevents.js.download"></script><script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '376183892506022'); // Insert your pixel ID here.
+        fbq('track', 'PageView');
+        </script><style type="text/css">
+:root #content-top,
+:root .adsbygoogle,
+:root .adsbox
+{ display: none !important; }</style><style type="text/css">iframe[src="//tempest.services.disqus.com/ads-iframe/taboola/?category=tech&display_bidding_enabled=0&stories_allowed=1&service=dynamic&position=top&display_allowed=1&video_allowed=1&provider=adsnative&thumbnails_allowed=0&experiment=network_default&variant=fallthrough&display_only=0&sandbox_display=1&links_allowed=0&doublewide_allowed=1&shortname=daengwebs&forum_pk=5141596&forum_shortname=daengwebs&safetylevel=30&t=1560408403&anchorColor=%23007bff&colorScheme=light&sourceUrl=https%3A%2F%2Fdaengweb.id%2Fupload-resize-image-di-laravel-57&typeface=sans-serif&canonicalUrl=https%3A%2F%2Fdaengweb.id%2Fupload-resize-image-di-laravel-57&disqus_version=71ad759"],
+iframe[src="//tempest.services.disqus.com/ads-iframe/adsnative/?category=tech&display_bidding_enabled=0&stories_allowed=1&service=dynamic&position=top&display_allowed=1&video_allowed=1&provider=adsnative&thumbnails_allowed=0&experiment=network_default&variant=fallthrough&display_only=0&sandbox_display=1&links_allowed=0&doublewide_allowed=1&shortname=daengwebs&forum_pk=5141596&forum_shortname=daengwebs&safetylevel=30&t=1560407547&anchorColor=%23007bff&colorScheme=light&sourceUrl=https%3A%2F%2Fdaengweb.id%2Fupload-resize-image-di-laravel-57%23&typeface=sans-serif&canonicalUrl=https%3A%2F%2Fdaengweb.id%2Fupload-resize-image-di-laravel-57&disqus_version=71ad759"],
+iframe[src="//tempest.services.disqus.com/ads-iframe/adsnative/?category=tech&display_bidding_enabled=0&stories_allowed=1&service=dynamic&position=top&display_allowed=1&video_allowed=1&provider=adsnative&thumbnails_allowed=0&experiment=network_default&variant=fallthrough&display_only=0&sandbox_display=1&links_allowed=0&doublewide_allowed=1&shortname=daengwebs&forum_pk=5141596&forum_shortname=daengwebs&safetylevel=30&t=1560407547&anchorColor=%23007bff&colorScheme=light&sourceUrl=https%3A%2F%2Fdaengweb.id%2Fupload-resize-image-di-laravel-57&typeface=sans-serif&canonicalUrl=https%3A%2F%2Fdaengweb.id%2Fupload-resize-image-di-laravel-57&disqus_version=71ad759"]
+{display:none !important;}</style>
+<noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=376183892506022&ev=PageView&noscript=1"
+        /></noscript>
+
+
+<meta name="google-site-verification" content="aYavqZIeew9KgcsmtGaDrJiZza_AVTDzbbtt2r3_VJE">
+<meta name="msvalidate.01" content="9593514CB8129BD37E2344DC5CC0D535">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99313879-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script async="" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/f.txt"></script>
+<script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3837076953019192",
+        enable_page_level_ads: true
+      });
+    </script>
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type": "Organization",
+        "name" : "Daeng Web - Media Pemrograman Makassar",
+        "url" : "https://daengweb.id",
+        "potentialAction" : {
+            "@type" : "SearchAction",
+            "target" : "https://daengweb.id/cari?q={search_term}",
+            "query-input" : "required name=search_term"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+6285343966997",
+            "contactType": "Customer service"
+        },
+        "sameAs" : [
+            "https://facebook.com/DaengWebId/"
+        ]
+    }
+    </script>
+<script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/embed.js.download" data-timestamp="1560411893105"></script><style type="text/css">@-webkit-keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}to{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}to{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}to{top:2.8125em;left:.875em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}to{top:2.8125em;left:.875em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}to{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}to{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}to{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}to{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}body.swal2-toast-shown .swal2-container{position:fixed;background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-shown{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;box-shadow:0 0 .625em #d9d9d9;overflow-y:hidden}.swal2-popup.swal2-toast .swal2-header{flex-direction:row}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:static;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon-text{font-size:2em;font-weight:700;line-height:1em}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{height:auto;margin:0 .3125em}.swal2-popup.swal2-toast .swal2-styled{margin:0 .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 .0625em #fff,0 0 0 .125em rgba(50,100,150,.4)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:2em;height:2.8125em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.25em;left:-.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:2em 2em;transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;-webkit-transform-origin:0 2em;transform-origin:0 2em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:showSweetToast .5s;animation:showSweetToast .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:hideSweetToast .2s forwards;animation:hideSweetToast .2s forwards}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:animate-toast-success-tip .75s;animation:animate-toast-success-tip .75s}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:animate-toast-success-long .75s;animation:animate-toast-success-long .75s}@-webkit-keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotate(2deg);transform:translateY(-.625em) rotate(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotate(-2deg);transform:translateY(0) rotate(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotate(2deg);transform:translateY(.3125em) rotate(2deg);opacity:.7}to{-webkit-transform:translateY(0) rotate(0);transform:translateY(0) rotate(0);opacity:1}}@keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotate(2deg);transform:translateY(-.625em) rotate(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotate(-2deg);transform:translateY(0) rotate(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotate(2deg);transform:translateY(.3125em) rotate(2deg);opacity:.7}to{-webkit-transform:translateY(0) rotate(0);transform:translateY(0) rotate(0);opacity:1}}@-webkit-keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}to{-webkit-transform:rotate(1deg);transform:rotate(1deg);opacity:0}}@keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}to{-webkit-transform:rotate(1deg);transform:rotate(1deg);opacity:0}}@-webkit-keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}to{top:1.125em;left:.1875em;width:.75em}}@keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}to{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}to{top:.9375em;right:.1875em;width:1.375em}}@keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}to{top:.9375em;right:.1875em;width:1.375em}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-shown{top:auto;right:auto;bottom:auto;left:auto;background-color:transparent}body.swal2-no-backdrop .swal2-shown>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-shown.swal2-top{top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-top-left,body.swal2-no-backdrop .swal2-shown.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-top-end,body.swal2-no-backdrop .swal2-shown.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-shown.swal2-center{top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-left,body.swal2-no-backdrop .swal2-shown.swal2-center-start{top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-end,body.swal2-no-backdrop .swal2-shown.swal2-center-right{top:50%;right:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom{bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom-left,body.swal2-no-backdrop .swal2-shown.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-bottom-end,body.swal2-no-backdrop .swal2-shown.swal2-bottom-right{right:0;bottom:0}.swal2-container{display:flex;position:fixed;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:10px;background-color:transparent;z-index:1060;overflow-x:hidden;-webkit-overflow-scrolling:touch}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media (-ms-high-contrast:active),(-ms-high-contrast:none){.swal2-container .swal2-modal{margin:0!important}}.swal2-container.swal2-fade{transition:background-color .1s}.swal2-container.swal2-shown{background-color:rgba(0,0,0,.4)}.swal2-popup{display:none;position:relative;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border-radius:.3125em;background:#fff;font-family:inherit;font-size:1rem;box-sizing:border-box}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-popup .swal2-header{display:flex;flex-direction:column;align-items:center}.swal2-popup .swal2-title{display:block;position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-popup .swal2-actions{flex-wrap:wrap;align-items:center;justify-content:center;margin:1.25em auto 0;z-index:1}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm{width:2.5em;height:2.5em;margin:.46875em;padding:0;border:.25em solid transparent;border-radius:100%;border-color:transparent;background-color:transparent!important;color:transparent;cursor:default;box-sizing:border-box;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel{margin-right:30px;margin-left:30px}.swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm:after{display:inline-block;width:15px;height:15px;margin-left:5px;border:3px solid #999;border-radius:50%;border-right-color:transparent;box-shadow:1px 1px 1px #fff;content:"";-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal}.swal2-popup .swal2-styled{margin:.3125em;padding:.625em 2em;font-weight:500;box-shadow:none}.swal2-popup .swal2-styled:not([disabled]){cursor:pointer}.swal2-popup .swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#3085d6;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#aaa;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled:focus{outline:0;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(50,100,150,.4)}.swal2-popup .swal2-styled::-moz-focus-inner{border:0}.swal2-popup .swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-popup .swal2-image{max-width:100%;margin:1.25em auto}.swal2-popup .swal2-close{position:absolute;top:0;right:0;justify-content:center;width:1.2em;height:1.2em;padding:0;transition:color .1s ease-out;border:none;border-radius:0;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer;overflow:hidden}.swal2-popup .swal2-close:hover{-webkit-transform:none;transform:none;color:#f27474}.swal2-popup>.swal2-checkbox,.swal2-popup>.swal2-file,.swal2-popup>.swal2-input,.swal2-popup>.swal2-radio,.swal2-popup>.swal2-select,.swal2-popup>.swal2-textarea{display:none}.swal2-popup .swal2-content{justify-content:center;margin:0;padding:0;color:#545454;font-size:1.125em;font-weight:300;line-height:normal;z-index:1;word-wrap:break-word}.swal2-popup #swal2-content{text-align:center}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-radio,.swal2-popup .swal2-select,.swal2-popup .swal2-textarea{margin:1em auto}.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-textarea{width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;font-size:1.125em;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);box-sizing:border-box}.swal2-popup .swal2-file.swal2-inputerror,.swal2-popup .swal2-input.swal2-inputerror,.swal2-popup .swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-popup .swal2-file:focus,.swal2-popup .swal2-input:focus,.swal2-popup .swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 3px #c4e6f5}.swal2-popup .swal2-file::-webkit-input-placeholder,.swal2-popup .swal2-input::-webkit-input-placeholder,.swal2-popup .swal2-textarea::-webkit-input-placeholder{color:#ccc}.swal2-popup .swal2-file:-ms-input-placeholder,.swal2-popup .swal2-file::-ms-input-placeholder,.swal2-popup .swal2-input:-ms-input-placeholder,.swal2-popup .swal2-input::-ms-input-placeholder,.swal2-popup .swal2-textarea:-ms-input-placeholder,.swal2-popup .swal2-textarea::-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::placeholder,.swal2-popup .swal2-input::placeholder,.swal2-popup .swal2-textarea::placeholder{color:#ccc}.swal2-popup .swal2-range input{width:80%}.swal2-popup .swal2-range output{width:20%;font-weight:600;text-align:center}.swal2-popup .swal2-range input,.swal2-popup .swal2-range output{height:2.625em;margin:1em auto;padding:0;font-size:1.125em;line-height:2.625em}.swal2-popup .swal2-input{height:2.625em;padding:0 .75em}.swal2-popup .swal2-input[type=number]{max-width:10em}.swal2-popup .swal2-file{font-size:1.125em}.swal2-popup .swal2-textarea{height:6.75em;padding:.75em}.swal2-popup .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;color:#545454;font-size:1.125em}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-radio{align-items:center;justify-content:center}.swal2-popup .swal2-checkbox label,.swal2-popup .swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-popup .swal2-checkbox input,.swal2-popup .swal2-radio input{margin:0 .4em}.swal2-popup .swal2-validation-message{display:none;align-items:center;justify-content:center;padding:.625em;background:#f0f0f0;color:#666;font-size:1em;font-weight:300;overflow:hidden}.swal2-popup .swal2-validation-message:before{display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center;content:"!";zoom:normal}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media (-ms-high-contrast:active),(-ms-high-contrast:none){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-moz-document url-prefix(){.swal2-close:focus{outline:2px solid rgba(50,100,150,.4)}}.swal2-icon{position:relative;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;border:.25em solid transparent;border-radius:50%;line-height:5em;cursor:default;box-sizing:content-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;zoom:normal}.swal2-icon-text{font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-success{border-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:3.75em 3.75em;transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 3.75em;transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;top:-.25em;left:-.25em;width:100%;height:100%;border:.25em solid hsla(98,55%,69%,.3);border-radius:50%;z-index:2;box-sizing:content-box}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;top:.5em;left:1.625em;width:.4375em;height:5.625em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);z-index:1}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;height:.3125em;border-radius:.125em;background-color:#a5dc86;z-index:2}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.875em;width:1.5625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-progresssteps{align-items:center;margin:0 0 1.25em;padding:0;font-weight:600}.swal2-progresssteps li{display:inline-block;position:relative}.swal2-progresssteps .swal2-progresscircle{width:2em;height:2em;border-radius:2em;background:#3085d6;color:#fff;line-height:2em;text-align:center;z-index:20}.swal2-progresssteps .swal2-progresscircle:first-child{margin-left:0}.swal2-progresssteps .swal2-progresscircle:last-child{margin-right:0}.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep{background:#3085d6}.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep~.swal2-progresscircle,.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep~.swal2-progressline{background:#add8e6}.swal2-progresssteps .swal2-progressline{width:2.5em;height:.4em;margin:0 -1px;background:#3085d6;z-index:10}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-show.swal2-noanimation{-webkit-animation:none;animation:none}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-hide.swal2-noanimation{-webkit-animation:none;animation:none}[dir=rtl] .swal2-close{right:auto;left:0}.swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-animate-success-icon .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-animate-error-icon{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-animate-error-icon .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}@-webkit-keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static!important}}</style><style type="text/css">
+:root *[astgtof][hidden] { display: none !important; }</style><script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/count-data.js.download"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.c268ed5d1c2c6bd5b044fe095da0a0c9.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.7306fbb45608972e37b2d3948bc46a0b.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.2e5bc2439403325e29d259632d7ebd62.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/alfalfa_min.d078e4f2a4721192a99e02601a767617.js.download" async="" charset="UTF-8"></script></head>
+<body class="shards-landing-page--1">
+<nav class="navbar navbar-dark navbar-expand-md fixed-top dw-navbar-container">
+<a class="navbar-brand" href="https://daengweb.id/">
+<img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/logo-head.png" alt="Daeng Web" class="img-fluid">
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+<ul class="navbar-nav" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
+<li class="nav-item ">
+<a class="nav-link" href="https://daengweb.id/">Home <span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item " itemprop="name">
+<a itemprop="url" class="nav-link" href="https://daengweb.id/daftar-isi">Daftar Isi</a>
+</li>
+<li class="nav-item " itemprop="name">
+<a itemprop="url" class="nav-link" href="https://daengweb.id/artikel">Artikel</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://daengweb.id/screencast">ScreenCast <small><sup class="badge badge-danger">Baru</sup></small></a>
+</li>
+<li class="nav-item ">
+<a class="nav-link" href="https://daengweb.id/course">Course</a>
+</li>
+<li class="nav-item ">
+<a class="nav-link" href="https://daengweb.id/diary-error">Diary Error</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" id="Informasi" href="https://daengweb.id/upload-resize-image-di-laravel-57#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Informasi</a>
+<ul class="dropdown-menu" aria-labelledby="Informasi">
+<li class="dropdown-item"><a href="https://daengweb.id/tentang">Tentang Kami</a></li>
+<li class="dropdown-item"><a href="https://daengweb.id/terms">Ketentuan</a></li>
+<li class="dropdown-item"><a href="https://daengweb.id/privacy-policy">Kebijakan</a></li>
+</ul>
+</li>
+</ul>
+<ul class="navbar-nav ml-auto">
+<li class="nav-item" style="padding-right: 5px; padding-bottom: 5px">
+<a class="btn btn-danger btn-sm" href="https://daengweb.id/users/register">
+<i class="fa fa-terminal"></i> Sign Up
+</a>
+</li>
+<li class="nav-item">
+<a class="btn btn-primary btn-sm" href="https://daengweb.id/users/login">
+<i class="fa fa-sign-in"></i> Log In
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="topbanner">
+<div class="textbanner">
+<h2>~ We are changing the world with technology. ~</h2>
+<p class="quote-author">Matt Mullenweg</p>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-9 col-lg-9">
+<div class="blog section section-invert py-4">
+<div class="row py-4" itemscope="" itemtype="http://schema.org/BlogPosting">
+<div class="col-lg-12 col-md-12 col-sm-12">
+<div class="box card mb-4" style="">
+<meta itemprop="image" content="https://daengweb.id/uploads/galeri/1/Upload___Resize_Image_di_Laravel_5_7.png" alt="Upload &amp; Resize Image di Laravel 5.7">
+<img class="card-img-top" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/Upload___Resize_Image_di_Laravel_5_7.png" alt="Upload &amp; Resize Image di Laravel 5.7">
+<div class="card-body">
+<h1>Upload &amp; Resize Image di Laravel 5.7</h1>
+<div class="info-desc">
+<span><i class="fa fa-calendar"></i>
+<time datetime="date_to_xmlschema" itemprop="datePublished">8 months ago</time>
+</span>
+<span><i class="fa fa-eye"></i> 7097 Dilihat</span>
+</div>
+<br>
+<div itemprop="articleBody">
+<h2>Pendahuluan</h2>
+<p>Fitur upload gambar merupakan fitur yang kerap kali ada dalam sebuah aplikasi, misalnya saja <em>e-commerce</em> yang menghimpun banyak gambar produk untuk ditampilkan. Jika kebutuhan kita akan gambar yang diterima adalah sesuai dengan dimensi yang dikirimkan oleh <em>user</em>, maka artikel <a href="https://daengweb.id/upload-file-di-laravel-5">Upload file di Laravel 5</a> sudah cukup untuk mengatasi solusi tersebut.</p>
+<p>Namun, akan berbeda hal nya jika kita ingin memanipulasi gambar yang diterima menjadi berbagai ukuran. Masalah yang sering kali ditemui adalah ketika dimensi dari gambar tersebut berubah maka tampilan gambar juga kadang berubah, misalnya saja terlihat gepeng.</p>
+<p class="baca-juga">Baca Juga: <a href="https://daengweb.id/membuat-fitur-bulk-import-data-csv-laravel-56">Membuat Fitur Bulk Import Data CSV Laravel 5.6</a></p>
+<h2>Persiapan Form Upload Image</h2>
+<p>Sebenarnya pendekatan ini tidak terbatas pada Laravel 5.7 saja, hanya saja saat artikel ini dituliskan, Laravel berada pada versi tersebut. <em>So</em>, kita memulainya dengan Laravel <em>fresh install</em>:</p>
+<pre><code class="hljs sql">composer <span class="hljs-keyword">create</span>-<span class="hljs-keyword">project</span> <span class="hljs-comment">--prefer-dist laravel/laravel uploadimage</span>
+</code></pre>
+<p>Sedangkan <em>library</em> yang akan digunakan untuk memudahkan dalam memanipulasi <em>image</em> adalah <em>package</em> <strong>Image intervention</strong>. Install <em>package</em> tersebut dengan <em>command</em>:</p>
+<pre><code class="hljs coffeescript">composer <span class="hljs-built_in">require</span> intervention/image
+</code></pre>
+<p>Buat <em>table</em> untuk menampung <em>image</em> yang telah di-<em>upload</em>:</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">php</span> <span class="hljs-selector-tag">artisan</span> <span class="hljs-selector-tag">make</span><span class="hljs-selector-pseudo">:model</span> <span class="hljs-selector-tag">Image_uploaded</span> <span class="hljs-selector-tag">-m</span>
+</code></pre>
+<p>Modifikasi <em>migration</em> dari <em>Image_uploaded</em> menjadi:</p>
+<pre><code class="language-php hljs" lang="php">Schema::create(<span class="hljs-string">'image_uploadeds'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint $table)</span> </span>{
+    $table-&gt;increments(<span class="hljs-string">'id'</span>);
+    $table-&gt;string(<span class="hljs-string">'name'</span>);
+    $table-&gt;string(<span class="hljs-string">'dimensions'</span>);
+    $table-&gt;string(<span class="hljs-string">'path'</span>);
+    $table-&gt;timestamps();
+});
+</code></pre>
+<p>Jangan lupa untuk menjalankan <em>command</em> <code>php artisan migrate</code>, kemudian buka <em>file</em> model <code>Image_uploaded.php</code> kemudian tambahkan <em>code</em> berikut:</p><script async="" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/f.txt"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3837076953019192" data-ad-slot="8560587974" data-ad-format="auto" astgtof="" hidden=""></ins>
+<script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+<pre><code class="language-php hljs" lang="php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Eloquent</span>\<span class="hljs-title">Model</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Image_uploaded</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+    <span class="hljs-keyword">protected</span> $guarded = []; <span class="hljs-comment">//tambahkan baris ini</span>
+}
+
+</code></pre>
+<p>Sedangkan untuk <em>form upload image</em>-nya, kita modifikasi <em>file</em> <code>welcome.blade.php</code>, sederhana saja karena yang akan dicapai dalam artikel ini adalah bagaimana meng-<em>upload image</em> sekaligus memanipulasi menjadi beberapa dimensi.</p>
+<pre><code class="language-html hljs xml" lang="html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Daengweb - Upload image<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row mt-4"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-md-12"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"card-body"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"{{ route('upload.image') }}"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span> <span class="hljs-attr">enctype</span>=<span class="hljs-string">"multipart/form-data"</span>&gt;</span>
+                            @csrf
+
+                            @if (session('success'))
+                                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"alert alert-success"</span>&gt;</span>
+                                    {{ session('success') }}
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            @endif
+
+                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">""</span>&gt;</span>Pilih gambar<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"file"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"image"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"text-danger"</span>&gt;</span>{{ $errors-&gt;first('image') }}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-danger btn-sm"</span>&gt;</span>Upload<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h2>Upload Image Laravel</h2>
+<p><em>Request</em> yang dikirimkan oleh <em>user</em> akan di-<em>handle</em> di<em>controller</em>, <em>so</em> buat <em>controller</em> dengan <em>command</em>:</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">php</span> <span class="hljs-selector-tag">artisan</span> <span class="hljs-selector-tag">make</span><span class="hljs-selector-pseudo">:controller</span> <span class="hljs-selector-tag">UploadImageController</span>
+</code></pre>
+<p>Buka <em>file</em> <code>UploadImageController.php</code> kemudian tambahkan <em>code</em> berikut:</p>
+<pre><code class="language-php hljs" lang="php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Image_uploaded</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Carbon</span>\<span class="hljs-title">Carbon</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Image</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">File</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UploadImageController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> $path;
+    <span class="hljs-keyword">public</span> $dimensions;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">//DEFINISIKAN PATH</span>
+        <span class="hljs-keyword">$this</span>-&gt;path = storage_path(<span class="hljs-string">'app/public/images'</span>);
+        <span class="hljs-comment">//DEFINISIKAN DIMENSI</span>
+        <span class="hljs-keyword">$this</span>-&gt;dimensions = [<span class="hljs-string">'245'</span>, <span class="hljs-string">'300'</span>, <span class="hljs-string">'500'</span>];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">upload</span><span class="hljs-params">(Request $request)</span>
+    </span>{
+        <span class="hljs-keyword">$this</span>-&gt;validate($request, [
+            <span class="hljs-string">'image'</span> =&gt; <span class="hljs-string">'required|image|mimes:jpg,png,jpeg'</span>
+        ]);
+		
+        <span class="hljs-comment">//JIKA FOLDERNYA BELUM ADA</span>
+        <span class="hljs-keyword">if</span> (!File::isDirectory(<span class="hljs-keyword">$this</span>-&gt;path)) {
+            <span class="hljs-comment">//MAKA FOLDER TERSEBUT AKAN DIBUAT</span>
+            File::makeDirectory(<span class="hljs-keyword">$this</span>-&gt;path);
+        }
+		
+        <span class="hljs-comment">//MENGAMBIL FILE IMAGE DARI FORM</span>
+        $file = $request-&gt;file(<span class="hljs-string">'image'</span>);
+        <span class="hljs-comment">//MEMBUAT NAME FILE DARI GABUNGAN TIMESTAMP DAN UNIQID()</span>
+        $fileName = Carbon::now()-&gt;timestamp . <span class="hljs-string">'_'</span> . uniqid() . <span class="hljs-string">'.'</span> . $file-&gt;getClientOriginalExtension();
+        <span class="hljs-comment">//UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)</span>
+        Image::make($file)-&gt;save(<span class="hljs-keyword">$this</span>-&gt;path . <span class="hljs-string">'/'</span> . $fileName);
+		
+        <span class="hljs-comment">//LOOPING ARRAY DIMENSI YANG DI-INGINKAN</span>
+        <span class="hljs-comment">//YANG TELAH DIDEFINISIKAN PADA CONSTRUCTOR</span>
+        <span class="hljs-keyword">foreach</span> (<span class="hljs-keyword">$this</span>-&gt;dimensions <span class="hljs-keyword">as</span> $row) {
+            <span class="hljs-comment">//MEMBUAT CANVAS IMAGE SEBESAR DIMENSI YANG ADA DI DALAM ARRAY </span>
+            $canvas = Image::canvas($row, $row);
+            <span class="hljs-comment">//RESIZE IMAGE SESUAI DIMENSI YANG ADA DIDALAM ARRAY </span>
+            <span class="hljs-comment">//DENGAN MEMPERTAHANKAN RATIO</span>
+            $resizeImage  = Image::make($file)-&gt;resize($row, $row, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($constraint)</span> </span>{
+                $constraint-&gt;aspectRatio();
+            });
+			
+            <span class="hljs-comment">//CEK JIKA FOLDERNYA BELUM ADA</span>
+            <span class="hljs-keyword">if</span> (!File::isDirectory(<span class="hljs-keyword">$this</span>-&gt;path . <span class="hljs-string">'/'</span> . $row)) {
+                <span class="hljs-comment">//MAKA BUAT FOLDER DENGAN NAMA DIMENSI</span>
+                File::makeDirectory(<span class="hljs-keyword">$this</span>-&gt;path . <span class="hljs-string">'/'</span> . $row);
+            }
+        	
+            <span class="hljs-comment">//MEMASUKAN IMAGE YANG TELAH DIRESIZE KE DALAM CANVAS</span>
+            $canvas-&gt;insert($resizeImage, <span class="hljs-string">'center'</span>);
+            <span class="hljs-comment">//SIMPAN IMAGE KE DALAM MASING-MASING FOLDER (DIMENSI)</span>
+            $canvas-&gt;save(<span class="hljs-keyword">$this</span>-&gt;path . <span class="hljs-string">'/'</span> . $row . <span class="hljs-string">'/'</span> . $fileName);
+        }
+        
+        <span class="hljs-comment">//SIMPAN DATA IMAGE YANG TELAH DI-UPLOAD</span>
+        Image_uploaded::create([
+            <span class="hljs-string">'name'</span> =&gt; $fileName,
+            <span class="hljs-string">'dimensions'</span> =&gt; implode(<span class="hljs-string">'|'</span>, <span class="hljs-keyword">$this</span>-&gt;dimensions),
+            <span class="hljs-string">'path'</span> =&gt; <span class="hljs-keyword">$this</span>-&gt;path
+        ]);
+        <span class="hljs-keyword">return</span> redirect()-&gt;back()-&gt;with([<span class="hljs-string">'success'</span> =&gt; <span class="hljs-string">'Gambar Telah Di-upload'</span>]);
+    }
+}
+</code></pre>
+<p>Terakhir buka <em>file</em> <code>routes/web.php</code> kemudian tambahkan <em>code</em> berikut untuk meng-<em>handle route</em> <em>uploading</em>:</p>
+<pre><code class="language-php hljs" lang="php">Route::post(<span class="hljs-string">'/'</span>, <span class="hljs-string">'UploadImageController@upload'</span>)-&gt;name(<span class="hljs-string">'upload.image'</span>);
+</code></pre>
+<p>Adapun hasil yang akan diperoleh ketika <em>file</em> telah di-<em>upload</em> akan tampak seperti berikut</p>
+<p><img alt="" referrerpolicy="no-referrer" src="file:///home/nuge/Documents/Upload%20&amp;%20Resize%20Image%20di%20Laravel%205.7/image%20upload%20laravel.png"><img alt="resizing image uploaded laravel" class="img-fluid" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/image_upload_laravel.png" style="width: 800px; height: 204px;"></p>
+<p>Sedangkan <em>file</em> yang telah di-<em>upload</em> akan disimpan kedalam folder <code>storage/app/public/image</code> dan masing-masing <em>image</em> yang telah di-<em>resize</em> sesuai dimensi yang di-inginkan akan ditempatkan kedalam folder sesuai dengan dimensinya.</p>
+<p><img alt="" referrerpolicy="no-referrer" src="file:///home/nuge/Documents/Upload%20&amp;%20Resize%20Image%20di%20Laravel%205.7/image%20upload%20laravel%20-%20resize%20dimension.png"><img alt="cara resize image upladed laravel " class="img-fluid" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/image_upload_laravel_-_resize_dimension.png" style="width: 498px; height: 236px;"></p>
+<p class="baca-juga">Baca Juga: <a href="https://daengweb.id/tips-menggunakan-eloquent-laravel">Tips Menggunakan Eloquent Laravel</a></p>
+<h2>Kesimpulan</h2>
+<p><em>Resizing image</em> menjadi penting agar supaya ketika ditampilkan pada halaman web, dimensi yang di-develiery adalah dimensi originalnya tanpa perlu lagi diatur ukurannya menggunakan <em>property</em> <code>width</code> dan <code>height</code> pada HTML / CSS. Hal ini tentu saja berpengaruh pada SEO karena <em>user</em> tidak perlu lagi me-<em>load image</em> yang besar, sedangkan yang ditampilkan justru berbeda, tentu saja juga akan mengurangi <em>load time</em>.</p>
+<p>Ohya untuk dokumentasi <em>code</em>-nya dapat kamu lihat di <a href="https://github.com/daengwebid/upload-resize-image-di-laravel-5-7">Github</a>.</p>
+</div>
+</div>
+<div class="card-footer text-muted">
+<a class="post-tag" href="https://daengweb.id/tag/controller">
+<i class="fa fa-tags"></i> Controller
+</a>
+<a class="post-tag" href="https://daengweb.id/tag/framework">
+<i class="fa fa-tags"></i> Framework
+</a>
+<a class="post-tag" href="https://daengweb.id/tag/html">
+<i class="fa fa-tags"></i> HTML
+</a>
+<a class="post-tag" href="https://daengweb.id/tag/model">
+<i class="fa fa-tags"></i> Model
+</a>
+<a class="post-tag" href="https://daengweb.id/tag/php">
+<i class="fa fa-tags"></i> Php
+</a>
+<a class="post-tag" href="https://daengweb.id/tag/laravel-57">
+<i class="fa fa-tags"></i> Laravel 5.7
+</a>
+</div>
+</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12">
+<div class="box card mb-4" style="">
+<div class="card-body">
+<div class="row">
+<div class="col-md-2">
+<img class="img-responsive rounded-circle" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/makassarnetwork05@gmail.com-1534517491.jpg">
+</div>
+<div class="col-md-10">
+<span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+<a href="https://daengweb.id/upload-resize-image-di-laravel-57#" class="author_name" itemprop="name">Anugrah sandi</a>
+</span>
+<p>Backend Developer iTechShark, salah satu perusahaan asal Amerika. Senang dengan teknologi baru. Laravel addict yang tidak fanatik. Merekam jejak dengan menulis</p>
+<div class="fb-share-button fb_iframe_widget" data-href="https://daengweb.id/upload-resize-image-di-laravel-57" data-layout="button_count" data-size="large" data-mobile-iframe="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=376037509401398&amp;container_width=763&amp;href=https%3A%2F%2Fdaengweb.id%2Fupload-resize-image-di-laravel-57&amp;layout=button_count&amp;locale=id_ID&amp;mobile_iframe=true&amp;sdk=joey&amp;size=large"><span style="vertical-align: bottom; width: 106px; height: 28px;"><iframe name="f8e9d25e9e8bf" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:share_button Facebook Social Plugin" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/share_button.html" style="border: none; visibility: visible; width: 106px; height: 28px;" __idm_frm__="1126" class=""></iframe></span></div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="col-lg-12 col-md-12 col-sm-12">
+<div class="row">
+<div class="card-deck">
+<div class="col-md-4">
+<div class="box card mb-4" style="height: 592.828px;">
+<a href="https://daengweb.id/aplikasi-laundry-laravel-58-vuejs-spa-3-management-outlets">
+<img class="card-img-top img-fluid" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/Aplikasi_Laundry__Laravel_5_8_-_Vue_js_-_SPA___3__Management_Outlets.png" alt="Aplikasi Laundry (Laravel 5.8 - Vue.js - SPA) #3: Management Outlets">
+</a>
+<span class="category category--color">
+Laravel
+</span>
+<span class="category category--color">
+VueJS
+</span>
+<div class="card-body">
+<a href="https://daengweb.id/aplikasi-laundry-laravel-58-vuejs-spa-3-management-outlets">
+<h4 class="card-title">
+Aplikasi Laundry (Laravel 5.8 - Vue.js -...
+</h4>
+ </a>
+<p class="card-text">
+Salah satu module yang pertama kali akan dikerjakan adalah module dengan table yang tidak bergantung dengan table lainnya, maka dalam serial ke-3 ini kita akan menyelesaikan module management outlets,...
+</p>
+</div>
+<div class="card-footer text-muted">
+<ul class="statistic">
+<li class="likes">
+<a href="https://daengweb.id/upload-resize-image-di-laravel-57#"><i class="fa fa-eye"></i></a>
+<span>1850</span>
+</li>
+<li class="comments">
+<a href="https://daengweb.id/aplikasi-laundry-laravel-58-vuejs-spa-3-management-outlets/#disqus_thread">3 Comments</a>
+</li>
+</ul>
+</div>
+</div> </div>
+<div class="col-md-4">
+<div class="box card mb-4" style="height: 592.828px;">
+<a href="https://daengweb.id/aplikasi-laundry-laravel-58-vuejs-spa-2-templating-authentication">
+<img class="card-img-top img-fluid" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/Aplikasi_Laundry__Laravel_5_8_-_Vue_js_-_SPA___2__Templating___Authentication.png" alt="Aplikasi Laundry (Laravel 5.8 - Vue.js - SPA) #2: Templating &amp; Authentication">
+</a>
+<span class="category category--color">
+Laravel
+</span>
+<span class="category category--color">
+VueJS
+</span>
+<div class="card-body">
+<a href="https://daengweb.id/aplikasi-laundry-laravel-58-vuejs-spa-2-templating-authentication">
+<h4 class="card-title">
+Aplikasi Laundry (Laravel 5.8 - Vue.js -...
+</h4>
+</a>
+<p class="card-text">
+Sebagai sebuah aplikasi internal antar pemilik laundry dan pengelola usaha, maka dibutuhkan halaman untuk proses otentikasi, maka pada artikel ini akan membahas bagaimana membuat authentication menggu...
+</p>
+</div>
+<div class="card-footer text-muted">
+<ul class="statistic">
+<li class="likes">
+<a href="https://daengweb.id/upload-resize-image-di-laravel-57#"><i class="fa fa-eye"></i></a>
+ <span>2038</span>
+</li>
+<li class="comments">
+<a href="https://daengweb.id/aplikasi-laundry-laravel-58-vuejs-spa-2-templating-authentication/#disqus_thread">14 Comments</a>
+</li>
+</ul>
+</div>
+</div> </div>
+<div class="col-md-4">
+<div class="box card mb-4" style="height: 592.828px;">
+<a href="https://daengweb.id/aplikasi-laundry-laravel-58-vuejs-spa-1-schema-database">
+<img class="card-img-top img-fluid" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/Aplikasi_Laundry__Laravel_5_8_-_Vue_js_-_SPA___1__Schema_Database.png" alt="Aplikasi Laundry (Laravel 5.8 - Vue.js - SPA) #1: Schema Database">
+</a>
+<span class="category category--color">
+Laravel
+</span>
+<div class="card-body">
+<a href="https://daengweb.id/aplikasi-laundry-laravel-58-vuejs-spa-1-schema-database">
+<h4 class="card-title">
+Aplikasi Laundry (Laravel 5.8 - Vue.js -...
+</h4>
+</a>
+<p class="card-text">
+Beragam method yang digunakan untuk membuat sebuah aplikasi sesuai dengan yang diinginkan, salah satunya menggunakan SPA. Dalam tutorial ini kita akan belajar bagaimana membuat aplikasi laundry menggu...
+</p>
+</div>
+<div class="card-footer text-muted">
+<ul class="statistic">
+<li class="likes">
+<a href="https://daengweb.id/upload-resize-image-di-laravel-57#"><i class="fa fa-eye"></i></a>
+<span>2986</span>
+</li>
+<li class="comments">
+<a href="https://daengweb.id/aplikasi-laundry-laravel-58-vuejs-spa-1-schema-database/#disqus_thread">5 Comments</a>
+</li>
+</ul>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+<div class="col-md-12">
+<div class="box card mb-4" style="">
+<div class="card-header">
+<h4 class="card-title">
+<i class="fa fa-comments o"></i> Komentar
+</h4>
+</div>
+<div class="card-body">
+<div id="disqus_thread"><iframe id="dsq-app2718" name="dsq-app2718" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" sandbox="allow-forms allow-popups allow-same-origin allow-scripts" width="100%" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/saved_resource(1).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 0px !important; display: none !important;" hidden=""></iframe><iframe id="dsq-app2715" name="dsq-app2715" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/saved_resource(2).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 2142px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+<script type="application/javascript">
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    
+            var disqus_config = function () {
+                this.page.url = 'https://daengweb.id/upload-resize-image-di-laravel-57';  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = 'upload-resize-image-di-laravel-57'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+    
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://daengwebs.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div></div> </div>
+</div>
+</div>
+<div class="col-md-3 col-lg-3">
+<div class="blog section py-4">
+<div class="container">
+<div class="py-4">
+<div class="row">
+<div class="col-md-12">
+<form method="GET" action="https://daengweb.id/cari" accept-charset="UTF-8">
+<div class="input-group mb-3">
+<input class="form-control" aria-label="Cari" aria-describedby="basic-addon2" placeholder="Apa yang anda cari ?" name="q" type="text">
+<div class="input-group-append">
+<button class="btn btn-outline-danger" type="submit">
+<i class="fa fa-search"></i>
+</button>
+</div>
+</div>
+</form>
+</div>
+<div id="sideSubscribe" class="col-md-12 py-4"><div class="card--red"><div class="card__header"><h2>Newsletter</h2> <img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/email.png" alt="Subscribe Daengweb" class="header__icon"></div> <div class="card__content"><p>Jangan lewatkan informasi seputar tips, tutorial dan lain sebagainya.</p> <form action="javascript:void(0)" method="post"><div class="form-group"><div class="input-group"><input type="email" placeholder="Masukkan Email..." id="email" required="required" class="form-control"> <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-envelope"></i></span></div></div> <!----></div> <div class="form-group"><div class="input-group"><input type="text" name="name" placeholder="Masukkan Nama..." id="name" required="required" class="form-control"> <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-user"></i></span></div></div> <!----></div> <div class="form-group"><button class="btn btn-danger btn-md"><i class="fa fa-envelope"></i> Subscribe Now
+            </button></div></form></div></div></div>
+<div class="col-md-12 py-4">
+<div class="card">
+<div class="card-header">
+<h4 class="card-title">Kategori</h4>
+</div>
+<div class="card-body nopadding">
+<div class="dw-category">
+<div class="dw-listitem">
+<ul>
+<li>
+<a href="https://daengweb.id/kategori/codeception" class="dw-item" data-action="tag-article" data-position="article-sidebar" data-id="javascript">
+<div class="dw-logo">
+<img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/codeception-1534420419_32_32.png" class="img-circle">
+</div>
+ <div class="tech-title">
+Codeception
+<div class="pull-right" style="padding-right: 10px">
+<span class="badge badge-danger">1</span>
+</div>
+</div>
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/kategori/flutter" class="dw-item" data-action="tag-article" data-position="article-sidebar" data-id="javascript">
+<div class="dw-logo">
+<img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/flutter-1534420128_32_32.png" class="img-circle">
+</div>
+<div class="tech-title">
+Flutter
+<div class="pull-right" style="padding-right: 10px">
+<span class="badge badge-danger">5</span>
+</div>
+</div>
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/kategori/git" class="dw-item" data-action="tag-article" data-position="article-sidebar" data-id="javascript">
+<div class="dw-logo">
+<img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/git-1534420242_32_32.png" class="img-circle">
+</div>
+<div class="tech-title">
+Git
+<div class="pull-right" style="padding-right: 10px">
+<span class="badge badge-danger">1</span>
+</div>
+</div>
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/kategori/laravel" class="dw-item" data-action="tag-article" data-position="article-sidebar" data-id="javascript">
+<div class="dw-logo">
+<img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/laravel-1534420335_32_32.png" class="img-circle">
+</div>
+<div class="tech-title">
+Laravel
+<div class="pull-right" style="padding-right: 10px">
+<span class="badge badge-danger">57</span>
+</div>
+</div>
+</a>
+ </li>
+<li>
+<a href="https://daengweb.id/kategori/linux" class="dw-item" data-action="tag-article" data-position="article-sidebar" data-id="javascript">
+<div class="dw-logo">
+<img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/linux-1536381263_32_32.jpg" class="img-circle">
+</div>
+<div class="tech-title">
+Linux
+<div class="pull-right" style="padding-right: 10px">
+<span class="badge badge-danger">1</span>
+</div>
+</div>
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/kategori/php" class="dw-item" data-action="tag-article" data-position="article-sidebar" data-id="javascript">
+<div class="dw-logo">
+<img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/php-1534420209_32_32.png" class="img-circle">
+</div>
+<div class="tech-title">
+PHP
+<div class="pull-right" style="padding-right: 10px">
+<span class="badge badge-danger">4</span>
+</div>
+</div>
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/kategori/python" class="dw-item" data-action="tag-article" data-position="article-sidebar" data-id="javascript">
+<div class="dw-logo">
+<img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/python-1545629347_32_32.png" class="img-circle">
+</div>
+<div class="tech-title">
+Python
+<div class="pull-right" style="padding-right: 10px">
+<span class="badge badge-danger">1</span>
+</div>
+</div>
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/kategori/react-native" class="dw-item" data-action="tag-article" data-position="article-sidebar" data-id="javascript">
+<div class="dw-logo">
+ <img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/react-native-1534420308_32_32.png" class="img-circle">
+</div>
+<div class="tech-title">
+React Native
+<div class="pull-right" style="padding-right: 10px">
+<span class="badge badge-danger">8</span>
+</div>
+</div>
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/kategori/spring-boot" class="dw-item" data-action="tag-article" data-position="article-sidebar" data-id="javascript">
+<div class="dw-logo">
+<img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/spring-boot-1534420372_32_32.png" class="img-circle">
+</div>
+<div class="tech-title">
+Spring Boot
+<div class="pull-right" style="padding-right: 10px">
+<span class="badge badge-danger">3</span>
+</div>
+</div>
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/kategori/vuejs" class="dw-item" data-action="tag-article" data-position="article-sidebar" data-id="javascript">
+<div class="dw-logo">
+<img src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/vuejs-1534420279_32_32.png" class="img-circle">
+</div>
+<div class="tech-title">
+VueJS
+<div class="pull-right" style="padding-right: 10px">
+<span class="badge badge-danger">19</span>
+</div>
+</div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-12 py-4">
+<div class="box card mb-4" style="">
+<div class="card-header">
+<h4 class="card-title">Artikel Populer</h4>
+</div>
+<div class="card-body">
+<div class="dw-popular-post">
+<div class="sidebar-body">
+<ul>
+<li>
+<a href="https://daengweb.id/membuat-aplikasi-pos-point-of-sales-laravel-56-schema-database">
+ (Part 1) Membuat Aplikasi POS (Point of Sales) Laravel 5.6 - Schema Database
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/membuat-aplikasi-chatting-react-native">
+Membuat Aplikasi Chatting React Native
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/mudahnya-membuat-fitur-register-dan-login-pada-laravel-54-bagian-2">
+Mudahnya Membuat Fitur Register Dan Login Pada Laravel 5.4 Bagian 2
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/sweet-alert-dan-flash-messages-laravel-54">
+Sweet Alert dan Flash Messages Laravel 5.4
+</a>
+</li>
+<li>
+<a href="https://daengweb.id/membuat-aplikasi-pos-point-of-sales-laravel-56-manajemen-kategori">
+(Part 2) Membuat Aplikasi POS (Point of Sales) Laravel 5.6 - Manajemen Kategori
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="col-md-12 py-4">
+<div class="box card mb-4" style="">
+<div class="card-header">
+<h4 class="card-title">Tag</h4>
+</div>
+<div class="card-body">
+<div class="dw-popular-post">
+<div class="sidebar-body">
+<a href="https://daengweb.id/tag/ajax" class="btn btn-danger btn-sm mb-1">Ajax</a>
+<a href="https://daengweb.id/tag/alert" class="btn btn-danger btn-sm mb-1">Alert</a>
+<a href="https://daengweb.id/tag/android" class="btn btn-danger btn-sm mb-1">Android</a>
+<a href="https://daengweb.id/tag/authenticate" class="btn btn-danger btn-sm mb-1">Authenticate</a>
+<a href="https://daengweb.id/tag/axios" class="btn btn-danger btn-sm mb-1">Axios</a>
+<a href="https://daengweb.id/tag/component" class="btn btn-danger btn-sm mb-1">Component</a>
+<a href="https://daengweb.id/tag/controller" class="btn btn-danger btn-sm mb-1">Controller</a>
+<a href="https://daengweb.id/tag/dart" class="btn btn-danger btn-sm mb-1">Dart</a>
+<a href="https://daengweb.id/tag/directive" class="btn btn-danger btn-sm mb-1">Directive</a>
+<a href="https://daengweb.id/tag/email" class="btn btn-danger btn-sm mb-1">Email</a>
+<a href="https://daengweb.id/tag/exception" class="btn btn-danger btn-sm mb-1">Exception</a>
+<a href="https://daengweb.id/tag/flutter" class="btn btn-danger btn-sm mb-1">Flutter</a>
+<a href="https://daengweb.id/tag/framework" class="btn btn-danger btn-sm mb-1">Framework</a>
+<a href="https://daengweb.id/tag/html" class="btn btn-danger btn-sm mb-1">HTML</a>
+<a href="https://daengweb.id/tag/java" class="btn btn-danger btn-sm mb-1">Java</a>
+<a href="https://daengweb.id/tag/javascript" class="btn btn-danger btn-sm mb-1">Javascript</a>
+<a href="https://daengweb.id/tag/laravel-53" class="btn btn-danger btn-sm mb-1">Laravel 5.3</a>
+<a href="https://daengweb.id/tag/laravel-54" class="btn btn-danger btn-sm mb-1">Laravel 5.4</a>
+<a href="https://daengweb.id/tag/laravel-55" class="btn btn-danger btn-sm mb-1">Laravel 5.5</a>
+<a href="https://daengweb.id/tag/laravel-56" class="btn btn-danger btn-sm mb-1">Laravel 5.6</a>
+<a href="https://daengweb.id/tag/laravel-57" class="btn btn-danger btn-sm mb-1">Laravel 5.7</a>
+<a href="https://daengweb.id/tag/laravel-58" class="btn btn-danger btn-sm mb-1">Laravel 5.8</a>
+<a href="https://daengweb.id/tag/linux" class="btn btn-danger btn-sm mb-1">Linux</a>
+<a href="https://daengweb.id/tag/mobile-development" class="btn btn-danger btn-sm mb-1">Mobile Development</a>
+<a href="https://daengweb.id/tag/model" class="btn btn-danger btn-sm mb-1">Model</a>
+<a href="https://daengweb.id/tag/notifications" class="btn btn-danger btn-sm mb-1">Notifications</a>
+<a href="https://daengweb.id/tag/pagination" class="btn btn-danger btn-sm mb-1">Pagination</a>
+<a href="https://daengweb.id/tag/php" class="btn btn-danger btn-sm mb-1">Php</a>
+<a href="https://daengweb.id/tag/python" class="btn btn-danger btn-sm mb-1">Python</a>
+<a href="https://daengweb.id/tag/react-native" class="btn btn-danger btn-sm mb-1">React native</a>
+<a href="https://daengweb.id/tag/relationships" class="btn btn-danger btn-sm mb-1">Relationships</a>
+<a href="https://daengweb.id/tag/sitemap" class="btn btn-danger btn-sm mb-1">Sitemap</a>
+<a href="https://daengweb.id/tag/spa" class="btn btn-danger btn-sm mb-1">SPA</a>
+<a href="https://daengweb.id/tag/spring-boot" class="btn btn-danger btn-sm mb-1">Spring Boot</a>
+<a href="https://daengweb.id/tag/trait" class="btn btn-danger btn-sm mb-1">Trait</a>
+<a href="https://daengweb.id/tag/ubuntu" class="btn btn-danger btn-sm mb-1">Ubuntu</a>
+<a href="https://daengweb.id/tag/vuejs" class="btn btn-danger btn-sm mb-1">VueJS</a>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="col-md-12 py-4">
+<div class="card">
+<div class="card-body">
+<script async="" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/f.txt"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3837076953019192" data-ad-slot="9480269040" data-ad-format="auto" astgtof="" hidden=""></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+<footer class="dw-footer">
+<div class="container px-5">
+<div class="row">
+<div class="col-md-6">
+<div class="footer-copyright">
+Copyright © 2017-2019 <a href="https://daengweb.id/">Daengweb</a>. All rights reserved.
+</div>
+</div>
+<div class="col-md-6">
+<div class="footer-menu">
+<ul>
+<li><a href="https://daengweb.id/tentang">Tentang Kami</a></li>
+<li><a href="https://daengweb.id/terms">Term &amp; Conditions</a></li>
+<li><a href="https://daengweb.id/privacy-policy">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/jquery-3.2.1.slim.min.js.download" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/popper.min.js.download" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/bootstrap.min.js.download" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/jquery.matchHeight-min.js.download"></script>
+<script type="text/javascript">
+        $(function() {
+            $('.box').matchHeight();
+        });
+    </script>
+<script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/dw-theme.js.download"></script>
+<script id="dsq-count-scr" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/count.js.download" async=""></script>
+<script src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/highlight.min.js.download"></script>
+<script type="application/javascript">hljs.initHighlightingOnLoad();</script>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/xd_arbiter(1).html" style="border: none;" __idm_frm__="1121"></iframe></div><div></div></div></div>
+<script type="application/javascript">(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.11&appId=376037509401398';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+<iframe __idm_frm__="1122" style="display: none;" src="./Upload &amp; Resize Image di Laravel 5.7 - Daeng Web_files/saved_resource(3).html"></iframe></body></html>

@@ -1,0 +1,5 @@
+var DISQUSWIDGETS;
+
+if (typeof DISQUSWIDGETS != 'undefined') {
+    DISQUSWIDGETS.displayCount({"text":{"and":"dan","comments":{"zero":"0 Comments","multiple":"{num} Comments","one":"1 Comment"}},"counts":[{"id":"https:\/\/daengweb.id\/aplikasi-laundry-laravel-58-vuejs-spa-2-templating-authentication\/","comments":14},{"id":"https:\/\/daengweb.id\/aplikasi-laundry-laravel-58-vuejs-spa-1-schema-database\/","comments":5},{"id":"https:\/\/daengweb.id\/aplikasi-laundry-laravel-58-vuejs-spa-3-management-outlets\/","comments":3}]});
+}
