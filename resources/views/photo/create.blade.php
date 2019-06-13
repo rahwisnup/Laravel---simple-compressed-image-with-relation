@@ -14,6 +14,8 @@
 </head>
 
 <body>
+    
+
     <div class="container">
         <div class="row mt-4">
             <div class="col-md-12">
@@ -22,11 +24,11 @@
                         <form action="{{ route('upload.image') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
-                            @if (session('success'))
+                            {{-- @if (session('success'))
                             <div class="alert alert-success">
                                 {{ session('success') }}
                             </div>
-                            @endif
+                            @endif --}}
 
                             <div class="form-group">
                                 <label for="">Title</label>
@@ -108,6 +110,12 @@
             </div>
         </div>
     </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <button></button>
+
+    <!-- Include this after the sweet alert js file -->
+    @include('sweet::alert')
 </body>
 
 </html>

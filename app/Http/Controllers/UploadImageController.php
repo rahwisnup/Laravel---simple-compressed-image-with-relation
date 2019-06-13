@@ -14,6 +14,9 @@ use File;
 //tambah post
 use App\Post;
 
+//alert
+use Alert;
+
 
 class UploadImageController extends Controller
 {
@@ -93,6 +96,9 @@ class UploadImageController extends Controller
             'body' => request('body'),
             'photo_id' => $images->id
         ]);
-        return redirect()->back()->with(['success' => 'Gambar Telah Di-upload']);
+        // Alert::message('Robots are working!');
+        Alert::success('Success!', 'Data Created Successfully');
+        return redirect()->back();
+        
     }
 }
