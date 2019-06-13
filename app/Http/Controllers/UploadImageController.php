@@ -55,7 +55,7 @@ class UploadImageController extends Controller
         $fileName = Carbon::now()->timestamp . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
         
         //UPLOAD ORIGINAN FILE (BELUM DIUBAH DIMENSINYA)
-        // Image::make($file)->save($this->path . '/' . $fileName);
+        Image::make($file)->save($this->path . '/' . $fileName);
 		
         //LOOPING ARRAY DIMENSI YANG DI-INGINKAN
         //YANG TELAH DIDEFINISIKAN PADA CONSTRUCTOR
